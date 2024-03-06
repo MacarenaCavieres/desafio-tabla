@@ -277,3 +277,29 @@ radiologia.forEach((item) => {
 //----------------pregunta4------------------------------------------------------------
 
 const listadoPacientes = document.querySelector("#listadoPacientes");
+
+const pacientesJuntos = [...radiologia, ...traumatologia, ...dental];
+
+pacientesJuntos.forEach((object) => {
+    listadoPacientes.innerHTML += `<p>${object.paciente}</p>`;
+});
+
+//----------------pregunta5------------------------------------------------------------
+
+const previsionDental = document.querySelector("#previsionDental");
+
+const filtroDental = dental.filter((object) => object.prevision === "ISAPRE");
+
+filtroDental.forEach((item) => {
+    previsionDental.innerHTML += `<p>${item.paciente} - ${item.prevision}</p>`;
+});
+
+//----------------pregunta6------------------------------------------------------------
+
+const previsionTraumatologia = document.querySelector("#previsionTraumatologia");
+
+const filtroTraumatologia = traumatologia.filter((object) => object.prevision === "FONASA");
+
+filtroTraumatologia.forEach((item) => {
+    previsionTraumatologia.innerHTML += `<p>${item.paciente} - ${item.prevision}</p>`;
+});
